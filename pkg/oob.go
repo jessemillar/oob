@@ -13,5 +13,12 @@ func Oob(input string) string {
 	input = strings.ReplaceAll(input, "u", "oob")
 	input = strings.ReplaceAll(input, "y", "oob")
 
+	input = strings.ReplaceAll(input, "O", "OOB") // Replace "O" first since "OOB" contains "o"
+	input = strings.ReplaceAll(input, "A", "OOB")
+	input = strings.ReplaceAll(input, "E", "OOB")
+	input = strings.ReplaceAll(input, "I", "OOB")
+	input = strings.ReplaceAll(input, "U", "OOB")
+	input = strings.ReplaceAll(input, "Y", "OOB")
+
 	return input
 }

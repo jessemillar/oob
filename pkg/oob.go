@@ -5,7 +5,7 @@ import (
 )
 
 func isLowerVowel(c rune) bool {
-	vowels := []rune{'a', 'e', 'i', 'o', 'u'}
+	vowels := []rune{'a', 'e', 'i', 'o', 'u', 'y'}
 	for _, value := range vowels {
 		if value == c {
 			return true
@@ -15,7 +15,7 @@ func isLowerVowel(c rune) bool {
 }
 
 func isUpperVowel(c rune) bool {
-	vowels := []rune{'A', 'E', 'I', 'O', 'U'}
+	vowels := []rune{'A', 'E', 'I', 'O', 'U', 'Y'}
 	for _, value := range vowels {
 		if value == c {
 			return true

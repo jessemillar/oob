@@ -19,3 +19,20 @@ func TestOobPangramUpper(t *testing.T) {
 		t.Errorf("got \"%s\"; want \"%s\"", got, want)
 	}
 }
+
+func TestOobPangramMixedCase(t *testing.T) {
+	want := "thOOB qoobOOBck broobwn foobx jOOBmps oobvoobr thoob loobzoob dOOBg"
+	got := Oob("thE quIck brown fox jUmps over the lazy dOg")
+	if got != want {
+		t.Errorf("got \"%s\"; want \"%s\"", got, want)
+	}
+}
+
+// Make sure that we don't double-change "o" instances since "oob" contains "o"
+func TestLetterOOrdering(t *testing.T) {
+	want := "boobg pooboobts"
+	got := Oob("big poots")
+	if got != want {
+		t.Errorf("got \"%s\"; want \"%s\"", got, want)
+	}
+}

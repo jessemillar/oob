@@ -11,7 +11,7 @@ import (
 	oob "github.com/jessemillar/oob/pkg"
 )
 
-const version = "1.1.0"
+const version = "1.2.0"
 
 type argConfig struct {
 	version  bool

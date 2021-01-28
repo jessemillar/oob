@@ -22,8 +22,8 @@ jobs:
     - name: Test
       run: go test -v ./...
 
-    - run: env GOOS=linux GOARCH=amd64 go build -o oob-linux-amd64 ./...
-    - run: env GOOS=windows GOARCH=amd64 go build -o oob-windows-amd64 ./...
+    - run: env GOOS=linux GOARCH=amd64 go build -o oob-linux-amd64 .
+    - run: env GOOS=windows GOARCH=amd64 go build -o oob-windows-amd64 .
 
     - name: Get Version Number
       id: get_version_number

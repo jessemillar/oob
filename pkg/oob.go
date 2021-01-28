@@ -4,21 +4,37 @@ import (
 	"strings"
 )
 
+func isLowerVowel(c rune) bool {
+	vowels := []rune{'a', 'e', 'i', 'o', 'u', 'y'}
+	for _, value := range vowels {
+		if value == c {
+			return true
+		}
+	}
+	return false
+}
+
+func isUpperVowel(c rune) bool {
+	vowels := []rune{'A', 'E', 'I', 'O', 'U', 'Y'}
+	for _, value := range vowels {
+		if value == c {
+			return true
+		}
+	}
+	return false
+}
+
 // Oob takes an input string and replaces all vowels with the string "oob"
 func Oob(input string) string {
-	input = strings.ReplaceAll(input, "o", "oob") // Replace "o" first since "oob" contains "o"
-	input = strings.ReplaceAll(input, "a", "oob")
-	input = strings.ReplaceAll(input, "e", "oob")
-	input = strings.ReplaceAll(input, "i", "oob")
-	input = strings.ReplaceAll(input, "u", "oob")
-	input = strings.ReplaceAll(input, "y", "oob")
-
-	input = strings.ReplaceAll(input, "O", "OOB") // Replace "O" first since "OOB" contains "o"
-	input = strings.ReplaceAll(input, "A", "OOB")
-	input = strings.ReplaceAll(input, "E", "OOB")
-	input = strings.ReplaceAll(input, "I", "OOB")
-	input = strings.ReplaceAll(input, "U", "OOB")
-	input = strings.ReplaceAll(input, "Y", "OOB")
-
-	return input
+	var sb strings.Builder
+	for _, value := range input {
+		if isLowerVowel(value) {
+			sb.WriteString("oob")
+		} else if isUpperVowel(value) {
+			sb.WriteString("OOB")
+		} else {
+			sb.WriteRune(value)
+		}
+	}
+	return sb.String()
 }

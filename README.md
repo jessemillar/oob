@@ -7,9 +7,13 @@ A cute Go library that changes vowels to “oob”.
 
 ```
 go build .
+
 ./oob "Hello there!"
 Hooblloob thoobroob!
+
 ./oob -f LICENSE
 MOOBT
 ...
+
+./oob "Speak this text" | say
 ```
